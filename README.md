@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# 📒 Frontend Agenda de Contactos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?logo=bootstrap&logoColor=white)
+![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)
 
-## Available Scripts
+Frontend moderno para gestionar tu agenda de contactos. Permite agregar, buscar y visualizar contactos de manera sencilla y rápida.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Características
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Formulario para agregar nuevos contactos
+- Listado de contactos en tarjetas
+- Validación de campos requeridos
+- Interfaz responsiva y atractiva con Bootstrap
+- Comunicación con API RESTful
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠️ Instalación
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Clona el repositorio**
+   ```sh
+   git clone https://github.com/tu-usuario/frontend-contactos.git
+   cd frontend-contactos
+   ```
 
-### `npm run build`
+2. **Instala las dependencias**
+   ```sh
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Inicia la aplicación**
+   ```sh
+   npm start
+   ```
+   La app estará disponible en [http://localhost:3000](http://localhost:3000).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🖥️ Estructura del Proyecto
 
-### `npm run eject`
+```
+src/
+├── components/
+│   ├── ContactoForm.js   # Formulario para agregar contactos
+│   └── ContactoList.js   # Listado de contactos
+├── App.js                # Componente principal
+├── index.js              # Punto de entrada
+└── App.css               # Estilos personalizados
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📚 Componentes Destacados
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### [`components/ContactoForm.js`](src/components/ContactoForm.js)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Formulario para agregar un nuevo contacto.  
+Campos: nombre, teléfono, email, dirección y fecha de nacimiento.  
+Envía los datos al backend y actualiza la lista.
 
-## Learn More
+```js
+// Ejemplo de uso
+<ContactoForm onAgregar={actualizarContactos} />
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📦 Dependencias
 
-### Code Splitting
+- [React](https://react.dev/)
+- [Bootstrap](https://getbootstrap.com/)
+- [fetch API](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 📄 Notas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Asegúrate de que el backend esté corriendo en `http://localhost:3000/api/contactos`.
+- Puedes personalizar los estilos en `App.css`.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> Hecho con ❤️ por [tu nombre o usuario]
