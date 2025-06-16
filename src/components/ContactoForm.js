@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const API_URL = 'http://localhost:3000/api/contactos';
+const API_URL = 'https://api-contactos-j0wn.onrender.com/api/contactos';
 
 const ContactoForm = ({ onAgregar }) => {
   const [formulario, setFormulario] = useState({

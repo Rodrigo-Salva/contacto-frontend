@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ContactoForm from './components/ContactoForm';
 import ContactoList from './components/ContactoList';
 
-const API_URL = 'http://localhost:3000/api/contactos';
+const API_URL = 'https://api-contactos-j0wn.onrender.com/api/contactos';
+
 
 function App() {
   const [contactos, setContactos] = useState([]);
