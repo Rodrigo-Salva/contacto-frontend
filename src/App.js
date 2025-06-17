@@ -5,18 +5,20 @@ import ContactoList from './components/ContactoList';
 
 const API_URL = 'https://api-contactos-j0wn.onrender.com/api/contactos';
 
-
 function App() {
   const [contactos, setContactos] = useState([]);
+  const [contactoSeleccionado, setContactoSeleccionado] = useState(null);
 
   const obtenerContactos = async () => {
-    try {
-      const res = await fetch(API_URL);
-      const data = await res.json();
-      setContactos(data);
-    } catch (err) {
-      console.error('Error al obtener contactos:', err.message);
-    }
+    const res = await fetch(API_URL);
+    const data = await res.json();
+    setContactos(data);
+  };
+
+  const eliminarContacto = async (id) => {
+    if (!window.confirm('¿Estás seguro de eliminar este contacto?')) return;
+    await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+    obtenerContactos();
   };
 
   useEffect(() => {
@@ -28,10 +30,18 @@ function App() {
       <h1 className="text-center text-primary mb-4">📒 Agenda de Contactos</h1>
       <div className="row">
         <div className="col-md-4">
-          <ContactoForm onAgregar={obtenerContactos} />
+          <ContactoForm
+            onAgregar={obtenerContactos}
+            contactoSeleccionado={contactoSeleccionado}
+            onLimpiar={() => setContactoSeleccionado(null)}
+          />
         </div>
         <div className="col-md-8">
-          <ContactoList contactos={contactos} />
+          <ContactoList
+            contactos={contactos}
+            onEliminar={eliminarContacto}
+            onEditar={setContactoSeleccionado}
+          />
         </div>
       </div>
     </div>

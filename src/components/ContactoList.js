@@ -1,29 +1,26 @@
 import React from 'react';
 
-const ContactoList = ({ contactos }) => {
+const ContactoList = ({ contactos, onEliminar, onEditar }) => {
   return (
-    <div className="row">
-      {contactos.length === 0 ? (
-        <p className="text-muted text-center">No hay contactos aún. Agrega uno.</p>
-      ) : (
-        contactos.map((c) => (
-          <div className="col-md-6" key={c._id}>
-            <div className="card mb-4 shadow-sm border-0">
-              <div className="card-body">
-                <h5 className="card-title text-primary">{c.nombre}</h5>
-                <ul className="list-unstyled">
-                  <li><strong>📞 Teléfono:</strong> {c.telefono}</li>
-                  {c.email && <li><strong>📧 Email:</strong> {c.email}</li>}
-                  {c.direccion && <li><strong>🏠 Dirección:</strong> {c.direccion}</li>}
-                  {c.fechaNacimiento && (
-                    <li className="text-muted">🎂 {new Date(c.fechaNacimiento).toLocaleDateString()}</li>
-                  )}
-                </ul>
-              </div>
+    <div className="card shadow-sm">
+      <div className="card-header bg-secondary text-white">
+        <h5 className="mb-0">Lista de Contactos</h5>
+      </div>
+      <ul className="list-group list-group-flush">
+        {contactos.map(contacto => (
+          <li key={contacto._id} className="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <strong>{contacto.nombre}</strong> - {contacto.telefono}
+              <br />
+              <small>{contacto.email}</small>
             </div>
-          </div>
-        ))
-      )}
+            <div>
+              <button className="btn btn-sm btn-warning me-2" onClick={() => onEditar(contacto)}>✏️ Editar</button>
+              <button className="btn btn-sm btn-danger" onClick={() => onEliminar(contacto._id)}>🗑️ Eliminar</button>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
